@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Searchcomp from "../SearchComp/Searchcomp";
+import{SyncLoader} from 'react-spinners'
 const Residencies = () => {
   const [apidata, setapidata] = useState([]);
   useEffect(() => {
@@ -14,7 +15,7 @@ const Residencies = () => {
 
   return (
     <>
-      <Searchcomp apidata={apidata} />
+      {apidata.length===0 ? <div className="flexCenter innerWidth"><SyncLoader loading={true} color="black"/></div>:<Searchcomp apidata={apidata} />}
     </>
   );
 };
