@@ -6,7 +6,7 @@ const Residencies = () => {
     fetchdata();
   }, []);
   const fetchdata = async () => {
-    let data = await fetch("http://localhost:8000/api/list-properties");
+    let data = await fetch("https://reunionproperties-server.vercel.app/api/list-properties");
     let jsondata = await data.json();
     setapidata(jsondata);
   };

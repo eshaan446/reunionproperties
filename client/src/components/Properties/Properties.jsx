@@ -13,7 +13,7 @@ const Properties = () => {
   }, []);
   let userEmail = localStorage.getItem("userEmail");
   const fetchdata = async () => {
-    let data = await fetch("http://localhost:8000/api/myProperties", {
+    let data = await fetch("https://reunionproperties-server.vercel.app/api/myProperties", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

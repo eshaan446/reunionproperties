@@ -7,7 +7,7 @@ const Signup = () => {
   const navigate = useNavigate();
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:8000/api/user/signup", {
+    const response = await fetch("https://reunionproperties-server.vercel.app/api/user/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

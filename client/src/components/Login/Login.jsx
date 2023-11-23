@@ -8,7 +8,7 @@ const Login = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:8000/api/user/login", {
+    const response = await fetch("https://reunionproperties-server.vercel.app/api/user/login", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
