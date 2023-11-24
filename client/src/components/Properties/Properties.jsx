@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import { sliderSettings } from "../../utils/common";
 import "./Properties.css";
-import { SyncLoader } from "react-spinners";
+import { HashLoader, SyncLoader } from "react-spinners";
 
 const Properties = () => {
   const [apidata, setapidata] = useState([]);
@@ -14,7 +14,7 @@ const Properties = () => {
  useEffect(()=>{
   setTimeout(()=>{
     setshowloader(false)
-  },7000)
+  },5000)
 
  },[])
   useEffect(() => {
@@ -66,7 +66,7 @@ const Properties = () => {
             {/* slider */}
             {apidata.length===0 ? (
               <div className="flexCenter innerWidth">
-                {showloader ?<SyncLoader loading={showloader} color="black" />:<h2>You have currently no Listings 😔</h2>}
+                {showloader ?<HashLoader loading={showloader} color="black" />:<h2>You currently have no Listings 😔</h2>}
               </div>
             ) : (
               apidata

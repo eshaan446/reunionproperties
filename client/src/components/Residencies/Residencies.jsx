@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HomepageListing from "../HomepageListing/HomepageListing";
-import{PulseLoader, SyncLoader} from 'react-spinners'
+import{ HashLoader} from 'react-spinners'
 const Residencies = () => {
   const [apidata, setapidata] = useState([]);
   const [search, setsearch] = useState("");
@@ -79,7 +79,7 @@ const Residencies = () => {
       </form>
     </div>
     
-      {apidata.length===0 ? <div className="flexCenter innerWidth"><PulseLoader loading={true} color="black"/></div>:<HomepageListing apidata={apidata} search={search} city={city} price={price} bhk={bhk} />}
+      {apidata.length===0 ? <div className="flexCenter innerWidth"><HashLoader loading={true} color="black"/></div>:<HomepageListing apidata={apidata} search={search} city={city} price={price} bhk={bhk} />}
     </>
   );
 };
