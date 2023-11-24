@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import { sliderSettings } from "../../utils/common";
@@ -9,6 +9,14 @@ import { SyncLoader } from "react-spinners";
 
 const Properties = () => {
   const [apidata, setapidata] = useState([]);
+  const [search, setsearch] = useState("");
+ const[showloader,setshowloader]=useState(true)
+ useEffect(()=>{
+  setTimeout(()=>{
+    setshowloader(false)
+  },7000)
+
+ },[])
   useEffect(() => {
     fetchdata();
   }, []);
@@ -29,46 +37,68 @@ const Properties = () => {
       setapidata(jsondata.userResidencies);
     }
   };
-  //console.log(apidata);
+  console.log(apidata);
+ 
+  
+  
+  
   return (
     <div>
       <Header />
       <div id="residencies" className="r-wrapper">
         <div className="paddings innerWidth r-container">
-          <div className="flexColStart r-head"></div>
+          <div className="flexCenter innerWidth">
+          <form>
+            <span>
+              <small>Search from your residencies:</small>
+            </span>
+            <input
+              type="text"
+              placeholder="Enter the name of your residency"
+              value={search}
+              onChange={(e) => setsearch(e.target.value)}
+            />
+          </form>
+          </div>
           <br />
           <Swiper {...sliderSettings}>
             <SlideNextButton />
             {/* slider */}
-            {apidata.length === 0 ? (
+            {apidata.length===0 ? (
               <div className="flexCenter innerWidth">
-                <SyncLoader loading={true} color="black" /> 
+                {showloader ?<SyncLoader loading={showloader} color="black" />:<h2>You have currently no Listings 😔</h2>}
               </div>
             ) : (
-              apidata.map((card, i) => (
-                <SwiperSlide key={i}>
-                  <div className="flexColStart r-card">
-                    <img src={card.image} alt="home" />
+              apidata
+                .filter((e) => {
+                  return search === ""
+                    ? e
+                    : e.title.toLowerCase().includes(search.toLowerCase());
+                })
+                .map((card, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="flexColStart r-card">
+                      <img src={card.image} alt="home" />
 
-                    <span className="secondaryText r-price">
-                      <span style={{ color: "orange" }}>₹</span>
-                      <span>{card.price}/month</span>
-                    </span>
+                      <span className="secondaryText r-price">
+                        <span style={{ color: "orange" }}>₹</span>
+                        <span>{card.price}/month</span>
+                      </span>
 
-                    <span className="primaryText">{card.title}</span>
-                    <h2 className="secondaryText">
-                      {card.address}, {card.city}, {card.country}
-                    </h2>
-                    <span className="secondaryText">{card.description}</span>
-                    <span className="secondaryText">
-                      {card.facilities.bhk}BHK
-                    </span>
-                    <span className="secondaryText">
-                      {card.facilities.carpetArea}sq/ft
-                    </span>
-                  </div>
-                </SwiperSlide>
-              ))
+                      <span className="primaryText">{card.title}</span>
+                      <h2 className="secondaryText">
+                        {card.address}, {card.city}, {card.country}
+                      </h2>
+                      <span className="secondaryText">{card.description}</span>
+                      <span className="secondaryText">
+                        {card.facilities.bhk}BHK
+                      </span>
+                      <span className="secondaryText">
+                        {card.facilities.carpetArea}sq/ft
+                      </span>
+                    </div>
+                  </SwiperSlide>
+                ))
             )}
           </Swiper>
         </div>
