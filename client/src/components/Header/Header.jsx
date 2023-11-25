@@ -19,6 +19,7 @@ const Header = () => {
 
   function handleLogout(){
     localStorage.removeItem("authToken");
+    localStorage.removeItem("userEmail");
     navigate('/')
     Toast("Logout Successfull");
   }
@@ -30,6 +31,7 @@ const Header = () => {
           {/* <h2>Reunion</h2> */}
         </Link>
         <div className=" flexCenter h-menu">
+        <Link to={'/'}><h3>Home</h3></Link>
           <NavLink to="/properties">
             {localStorage.getItem("authToken")?(<h3>My Properties</h3>):""}
             

@@ -6,6 +6,8 @@ import "swiper/css";
 import { sliderSettings } from "../../utils/common";
 import "./Properties.css";
 import { HashLoader, SyncLoader } from "react-spinners";
+import { Link } from "react-router-dom";
+
 
 const Properties = () => {
   const [apidata, setapidata] = useState([]);
@@ -58,11 +60,12 @@ const Properties = () => {
               value={search}
               onChange={(e) => setsearch(e.target.value)}
             />
+            <Link to='/addProperty'><button className="flexCenter innerWidth">Add a property</button></Link>
           </form>
           </div>
           <br />
           <Swiper {...sliderSettings}>
-            <SlideNextButton />
+             <SlideNextButton />
             {/* slider */}
             {apidata.length===0 ? (
               <div className="flexCenter innerWidth">
@@ -78,7 +81,7 @@ const Properties = () => {
                 .map((card, i) => (
                   <SwiperSlide key={i}>
                     <div className="flexColStart r-card">
-                      <img src={card.image} alt="home" />
+                      <img src={card.image} alt="property image" />
 
                       <span className="secondaryText r-price">
                         <span style={{ color: "orange" }}>₹</span>
