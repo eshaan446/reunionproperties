@@ -7,6 +7,7 @@ import AddProperty from "./components/AddProperty/AddProperty";
 
 function App() {
   return (
+    
     <BrowserRouter>
     <Routes>
     <Route path='/' element={<Website/>}/>

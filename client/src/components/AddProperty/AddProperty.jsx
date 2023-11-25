@@ -86,7 +86,7 @@ const AddProperty = () => {
           <span>
             <small>Paste a link of an image of your residency:</small>
           </span>
-          <input type="text" value={image} placeholder="e.g- https://yourimagelink.com/" onChange={(e)=>setImage(e.target.value)} required/>
+          <input type="text" value={image} placeholder="e.g- https://dummyimage.com/" onChange={(e)=>setImage(e.target.value)} required/>
           {image !=='' && <small><i>*Please make sure that the image link is working*.</i></small>}
           <span>
             <small>Select BHK:</small>

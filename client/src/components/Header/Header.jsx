@@ -23,6 +23,7 @@ const Header = () => {
     navigate('/')
     Toast("Logout Successfull");
   }
+  
   return (
     <section className="h-wrapper">
       <div className=" flexCenter paddings innerWidth h-container">
