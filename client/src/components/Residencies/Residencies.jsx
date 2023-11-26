@@ -17,7 +17,7 @@ const Residencies = () => {
     let jsondata = await data.json();
     setapidata(jsondata);
   };
-  console.log(apidata);
+  //console.log(apidata);
 
   return (
     <>
@@ -58,7 +58,7 @@ const Residencies = () => {
           </span>
           <input type="date" />
           <span>
-            <small>Price: ₹{price}</small>
+            <small>Maximum Price: ₹{price}</small>
           </span>
           <input
             type="range"

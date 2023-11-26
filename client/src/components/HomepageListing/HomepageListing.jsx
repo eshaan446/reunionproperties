@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./HomepageListing.css";
 import "swiper/css";
 import "../Residencies/Residencies.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomepageListing = ({ apidata, search, city, price, bhk }) => {
+  const navigate=useNavigate();
   return (
     <>
       <div className="innerWidth flexCenter">
@@ -52,7 +53,9 @@ const HomepageListing = ({ apidata, search, city, price, bhk }) => {
                       <span className="secondaryText">
                         {card.facilities.carpetArea}sq/ft
                       </span>
-                      
+                      <button onClick={()=>navigate(`../${card.id}`)}>
+                        View Property
+                      </button>
                     </div>
                   ))}
               </div>

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Header from "../Header/Header";
-
-const email = localStorage.getItem("userEmail");
+import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 
 const AddProperty = () => {
+  const navigate=useNavigate()
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState('');
@@ -28,11 +29,20 @@ const AddProperty = () => {
       );
       let jsondata = await response.json();
       if (response.status === 200) {
-        alert('Property Added Successfully')
-      } 
+        Swal.fire({
+          title: "Congratulations!",
+          text: "Property added successfully !",
+          icon: "success"
+        });
+        navigate('/') 
+      }
     } catch (error) {
-        alert('This property already exists.')
-      console.error("Error:", error);
+      Swal.fire({
+        title: "Error!",
+        text: "This property already exists !",
+        icon: "error"
+      });
+      //console.error("Error:", error);
     }
   };
 
