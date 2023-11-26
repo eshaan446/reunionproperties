@@ -35,7 +35,7 @@ const ViewPropertyListing = ({ apidata }) => {
           </span>
           <span className="secondaryText">
             <span style={{ color: "orange" }}>Posted on:</span>{" "}
-            {apidata.createdAt.split("").slice(0, 10).join("")}
+            {apidata.createdAt.split("").slice(0, 10).join("").split('-').reverse().join('-')}
           </span>
           <span className="secondaryText">
             <span style={{ color: "orange" }}>Posted By:</span>{" "}
