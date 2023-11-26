@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header/Header';
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +17,11 @@ const Login = () => {
       body: JSON.stringify({ email })
     });
     if (response.status === 400) {
-        alert("No such user, Please signup")
+      Swal.fire({
+        title: "Please Signup!",
+        text: "User doesn't exist",
+        icon: "error"
+      });
       //console.log("User doesn't exist");
       navigate('/signup')
     } else {
@@ -25,6 +30,12 @@ const Login = () => {
       localStorage.setItem("authToken",json.authToken)
       localStorage.setItem("userEmail",json.email)
       console.log(localStorage.getItem("authToken"));
+      Swal.fire({
+        title: "Login Successfull!",
+        text: "Welcome to Reunion",
+        icon: "success"
+      });
+
       navigate('/');
     }
   }

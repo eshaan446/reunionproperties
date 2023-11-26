@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
+import Swal from 'sweetalert2'
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({ email: "" });
@@ -15,10 +16,18 @@ const Signup = () => {
       body: JSON.stringify({ email: credentials.email }),
     });
     if (response.status === 400) {
-      alert("User Already Exists, Please Login");
+      Swal.fire({
+        title: "Please Login!",
+        text: "This user already exists.",
+        icon: "error"
+      });
       navigate("/login");
     } else {
-      alert("Signup Successfull, Please Login to continue");
+      Swal.fire({
+        title: "Signup Successfull!",
+        text: "Please Login to continue.",
+        icon: "success"
+      });
       navigate("/login");
     }
   }
