@@ -52,9 +52,7 @@ const HomepageListing = ({ apidata, search, city, price, bhk }) => {
                       <span className="secondaryText">
                         {card.facilities.carpetArea}sq/ft
                       </span>
-                      <Link to={'/viewProperty'}><button>
-                        View Property
-                      </button></Link>
+                      
                     </div>
                   ))}
               </div>
