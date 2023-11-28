@@ -4,7 +4,13 @@ import "swiper/css";
 import "../Residencies/Residencies.css";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const HomepageListing = ({ apidata, search, city, price, bhk }) => {
+  const today = new Date();
+  const formattedDate = `${today.getFullYear()}-${(today.getMonth() + 1)
+    .toString()
+    .padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
+    const todayDate=formattedDate.split('-')[2];
   const navigate=useNavigate();
   return (
     <>
@@ -39,12 +45,12 @@ const HomepageListing = ({ apidata, search, city, price, bhk }) => {
 
                       <span className="secondaryText r-price">
                         <span style={{ color: "orange" }}>₹</span>
-                        <span>{card.price}/month</span>
+                        <span>{card.price}/month</span> &nbsp;<small><i>{todayDate-card.createdAt.split("").slice(0, 10).join("").split('-').reverse()[0]===0?"💥Today":`${todayDate-card.createdAt.split("").slice(0, 10).join("").split('-').reverse()[0]}d ago`}</i></small>
                       </span>
 
                       <span className="primaryText">{card.title}</span>
                       <h2 className="secondaryText">
-                        {card.address}, {card.city}, {card.country}
+                        {card.address}, {card.city}, {card.country} 
                       </h2>
                       <span className="secondaryText">{card.description}</span>
                       <span className="secondaryText">

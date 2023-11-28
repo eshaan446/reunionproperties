@@ -122,6 +122,7 @@ const Properties = () => {
                 .map((card, i) => (
                   <SwiperSlide key={i}>
                     <div className="flexColStart r-card">
+                    
                       <img src={card.image} alt="property image" />
 
                       <span className="secondaryText r-price">
@@ -133,6 +134,10 @@ const Properties = () => {
                       <h2 className="secondaryText">
                         {card.address}, {card.city}, {card.country}
                       </h2>
+                      <span className="secondaryText r-price">
+                        <span style={{ color: "orange" }}>Posted On: </span>
+                        <span>{card.createdAt.split("").slice(0, 10).join("").split('-').reverse().join('-')}</span>
+                      </span>
                       <span className="secondaryText">{card.description}</span>
                       <span className="secondaryText">
                         {card.facilities.bhk}BHK

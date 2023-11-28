@@ -92,7 +92,7 @@ const UpdatePropertyForm = ({apidata}) => {
           <span>
             <small>Provide a description of your property:</small>
           </span>
-          <textarea value={description} onChange={(e)=>setDescription(e.target.value)} required></textarea>
+          <textarea style={{padding:'10px'}} value={description} onChange={(e)=>setDescription(e.target.value)} required></textarea>
 
           <span>
             <small>Rent/month ₹:</small>

@@ -23,7 +23,7 @@ const UpdateProperty = () => {
   return (
     <>
       <Header />
-      <h2 className="innerWidth">Update a property</h2>
+      <h2 className="innerWidth">Update a property:</h2>
       <div className="flexCenter">
       {apidata.length === 0 ? (
         <HashLoader loading={true} color="black" />

@@ -65,6 +65,7 @@ const AddProperty = () => {
   return (
     <div>
       <Header />
+      <h2 className="innerWidth">Add a property:</h2>
       <div className="flexCenter innerWidth">
         <form onSubmit={handleSubmit}>
           <span>
@@ -74,17 +75,17 @@ const AddProperty = () => {
           <span>
             <small>Provide a description of your property:</small>
           </span>
-          <textarea value={description} onChange={(e)=>setDescription(e.target.value)} required></textarea>
+          <textarea style={{padding:'10px'}} value={description} onChange={(e)=>setDescription(e.target.value)} required></textarea>
 
           <span>
             <small>Rent/month ₹:</small>
           </span>
-          <input type="number" value={price} onChange={(e)=>setPrice(parseInt(e.target.value))} required/>
+          <input type="number" placeholder="eg: 5000-12000" value={price} onChange={(e)=>setPrice(parseInt(e.target.value))} required/>
           <span>
           <span>
             <small>Enter the address or Landmark area:</small>
           </span>
-          <input type="text" placeholder="e.g- Andheri West" value={address} onChange={(e)=>setAddress(e.target.value)} required/>
+          <input type="text" placeholder="e.g: Andheri West" value={address} onChange={(e)=>setAddress(e.target.value)} required/>
           <span></span>
             <small>Select city:</small>
           </span>
@@ -96,7 +97,7 @@ const AddProperty = () => {
           <span>
             <small>Paste a link of an image of your residency:</small>
           </span>
-          <input type="text" value={image} placeholder="e.g- https://dummyimage.com/" onChange={(e)=>setImage(e.target.value)} required/>
+          <input type="text" value={image} placeholder="e.g: https://dummyimage.com/" onChange={(e)=>setImage(e.target.value)} required/>
           {image !=='' && <small><i>*Please make sure that the image link is working*.</i></small>}
           <span>
             <small>Select BHK:</small>
@@ -110,9 +111,9 @@ const AddProperty = () => {
           <span>
             <small>Carpet Area in sq/ft:</small>
           </span>
-          <input type="number" placeholder="e.g-300" value={carpetArea} onChange={(e)=>setCarpetArea(parseInt(e.target.value))} required/>
+          <input type="number" placeholder="e.g: 300" value={carpetArea} onChange={(e)=>setCarpetArea(parseInt(e.target.value))} required/>
 
-          <button type="submit">Add this property</button>
+          <button type="submit">Add property</button>
         </form>
       </div>
     </div>
