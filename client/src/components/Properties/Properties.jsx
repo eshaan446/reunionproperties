@@ -140,7 +140,10 @@ const Properties = () => {
                       <span className="secondaryText">
                         {card.facilities.carpetArea}sq/ft
                       </span>
-                      <button onClick={()=>fireAlert(card.id)} style={{backgroundColor:'#d33'}}>Delete this property</button>
+                      <div id="flexCenter">
+                      <button onClick={()=>fireAlert(card.id)} style={{backgroundColor:'#d33'}}>Delete </button>
+                      <button onClick={()=>navigate(`../properties/update/${card.id}`)} style={{marginLeft:'15px'}}>Update</button>
+                      </div>
                     </div>
                   </SwiperSlide>
                 ))
