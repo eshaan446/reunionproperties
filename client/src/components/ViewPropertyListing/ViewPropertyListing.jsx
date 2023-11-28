@@ -44,7 +44,7 @@ const ViewPropertyListing = ({ apidata }) => {
               onClick={() => handleEmailClick(apidata.userEmail)}
               style={{ marginTop: "10px", alignItems: "center" }}
             >
-              Mail Owner
+              ✉️ Contact Owner
             </button>
           </span>
         </div>

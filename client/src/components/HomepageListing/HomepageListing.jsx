@@ -50,7 +50,7 @@ const HomepageListing = ({ apidata, search, city, price, bhk }) => {
                   );
 
                   const daysAgoText =
-                    daysAgo === 0 ? "💥Today" : `${daysAgo}d ago`;
+                    daysAgo === 0 ? "⏳Today" : `⏳${daysAgo}d ago`;
 
                   return (
                     <div className="flexColStart r-card" key={i}>
@@ -60,7 +60,7 @@ const HomepageListing = ({ apidata, search, city, price, bhk }) => {
                         <span style={{ color: "orange" }}>₹</span>
                         <span>{card.price}/month</span>{" "}
                         <small>
-                          <i>{daysAgoText}</i>
+                          <small><i><strong>{daysAgoText}</strong></i></small>
                         </small>
                       </span>
 
