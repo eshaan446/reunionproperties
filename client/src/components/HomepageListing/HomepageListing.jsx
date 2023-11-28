@@ -1,56 +1,72 @@
-import React, { useState } from "react";
+import React from "react";
 import "./HomepageListing.css";
 import "swiper/css";
 import "../Residencies/Residencies.css";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const HomepageListing = ({ apidata, search, city, price, bhk }) => {
-  const today = new Date();
-  const formattedDate = `${today.getFullYear()}-${(today.getMonth() + 1)
-    .toString()
-    .padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
-    const todayDate=formattedDate.split('-')[2];
-  const navigate=useNavigate();
-  return (
-    <>
-      <div className="innerWidth flexCenter">
-        <div className="flexCenter innerWidth">
-          <div id="residencies" className="r-wrapper">
-            <div className="paddings innerWidth r-container">
-              <div className="flexColStart r-head"></div>
+  const formattedDate = new Date().toISOString().split("T")[0];
+  const todayDate = new Date().getDate();
+  
 
-              <div className=" flexCenter container">
-                {/* slider */}
-                {apidata
-                  .filter((e) => {
-                    return search === ""
-                      ? e
-                      : e.title.toLowerCase().includes(search.toLowerCase());
-                  })
-                  .filter((e) => {
-                    return city === ""
-                      ? e
-                      : e.city.toLowerCase().includes(city.toLowerCase());
-                  })
-                  .filter((e) => {
-                    return e.price <= price;
-                  })
-                  .filter((e) => {
-                    return bhk === 0 ? e : e.facilities.bhk === bhk;
-                  })
-                  .map((card, i) => (
+  const navigate = useNavigate();
+
+  // Function to calculate days difference between two dates
+  const getDaysDifference = (date1, date2) => {
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const firstDate = new Date(date1);
+    const secondDate = new Date(date2);
+
+    const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    return diffDays;
+  };
+
+  return (
+    <div className="innerWidth flexCenter">
+      <div className="flexCenter innerWidth">
+        <div id="residencies" className="r-wrapper">
+          <div className="paddings innerWidth r-container">
+            <div className="flexColStart r-head"></div>
+
+            <div className=" flexCenter container">
+              {/* slider */}
+              {apidata
+                .filter((e) =>
+                  search === ""
+                    ? e
+                    : e.title.toLowerCase().includes(search.toLowerCase())
+                )
+                .filter((e) =>
+                  city === ""
+                    ? e
+                    : e.city.toLowerCase().includes(city.toLowerCase())
+                )
+                .filter((e) => e.price <= price)
+                .filter((e) => (bhk === 0 ? e : e.facilities.bhk === bhk))
+                .map((card, i) => {
+                  const daysAgo = getDaysDifference(
+                    formattedDate,
+                    card.createdAt.split("T")[0]
+                  );
+
+                  const daysAgoText =
+                    daysAgo === 0 ? "💥Today" : `${daysAgo}d ago`;
+
+                  return (
                     <div className="flexColStart r-card" key={i}>
                       <img src={card.image} alt="home" />
 
                       <span className="secondaryText r-price">
                         <span style={{ color: "orange" }}>₹</span>
-                        <span>{card.price}/month</span> &nbsp;<small><i>{todayDate-card.createdAt.split("").slice(0, 10).join("").split('-').reverse()[0]===0?"💥Today":`${todayDate-card.createdAt.split("").slice(0, 10).join("").split('-').reverse()[0]}d ago`}</i></small>
+                        <span>{card.price}/month</span>{" "}
+                        <small>
+                          <i>{daysAgoText}</i>
+                        </small>
                       </span>
 
                       <span className="primaryText">{card.title}</span>
                       <h2 className="secondaryText">
-                        {card.address}, {card.city}, {card.country} 
+                        {card.address}, {card.city}, {card.country}
                       </h2>
                       <span className="secondaryText">{card.description}</span>
                       <span className="secondaryText">
@@ -59,17 +75,17 @@ const HomepageListing = ({ apidata, search, city, price, bhk }) => {
                       <span className="secondaryText">
                         {card.facilities.carpetArea}sq/ft
                       </span>
-                      <button onClick={()=>navigate(`../${card.id}`)}>
+                      <button onClick={() => navigate(`../${card.id}`)}>
                         View Property
                       </button>
                     </div>
-                  ))}
-              </div>
+                  );
+                })}
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
