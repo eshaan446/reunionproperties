@@ -19,7 +19,7 @@ const ViewPropertyListing = ({ apidata }) => {
 
           <span className="primaryText">{apidata.title}</span>
           <h2 className="secondaryText">
-            {apidata.address}, {apidata.city}, {apidata.country}
+          <img style={{height:'13px', width:'14px'}} src="/location-position.svg"/> {apidata.address}, {apidata.city}, {apidata.country}
           </h2>
           <span className="secondaryText">
             <span style={{ color: "orange" }}>Description:</span>{" "}

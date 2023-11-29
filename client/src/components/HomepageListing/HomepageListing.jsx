@@ -59,21 +59,22 @@ const HomepageListing = ({ apidata, search, city, price, bhk }) => {
                       <span className="secondaryText r-price">
                         <span style={{ color: "orange" }}>₹</span>
                         <span>{card.price}/month</span>{" "}
-                        <small>
+                        <small style={{color:"orange"}}>
                           <small><i><strong>{daysAgoText}</strong></i></small>
                         </small>
                       </span>
 
                       <span className="primaryText">{card.title}</span>
+                      
                       <h2 className="secondaryText">
-                        {card.address}, {card.city}, {card.country}
+                       <img style={{height:'13px', width:'14px'}} src="/location-position.svg"/> {card.address}, {card.city}, {card.country}
                       </h2>
                       <span className="secondaryText">{card.description}</span>
                       <span className="secondaryText">
-                        {card.facilities.bhk}BHK
+                      <img style={{height:'13px', width:'14px'}} src="/bed-bedroom-alt.svg"/> {card.facilities.bhk} BHK
                       </span>
                       <span className="secondaryText">
-                        {card.facilities.carpetArea}sq/ft
+                      <img style={{height:'13px', width:'14px'}} src="/tape-measure-thin.svg"/> {card.facilities.carpetArea}sq/ft
                       </span>
                       <button onClick={() => navigate(`../${card.id}`)}>
                         View Property

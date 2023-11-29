@@ -132,7 +132,7 @@ const Properties = () => {
 
                       <span className="primaryText">{card.title}</span>
                       <h2 className="secondaryText">
-                        {card.address}, {card.city}, {card.country}
+                      <img style={{height:'13px', width:'14px'}} src="/location-position.svg"/> {card.address}, {card.city}, {card.country}
                       </h2>
                       <span className="secondaryText r-price">
                         <span style={{ color: "orange" }}>Posted On: </span>
@@ -140,10 +140,10 @@ const Properties = () => {
                       </span>
                       <span className="secondaryText">{card.description}</span>
                       <span className="secondaryText">
-                        {card.facilities.bhk}BHK
+                      <img style={{height:'13px', width:'14px'}} src="/bed-bedroom-alt.svg"/> {card.facilities.bhk} BHK
                       </span>
                       <span className="secondaryText">
-                        {card.facilities.carpetArea}sq/ft
+                      <img style={{height:'13px', width:'14px'}} src="/tape-measure-thin.svg"/> {card.facilities.carpetArea}sq/ft
                       </span>
                       <div id="flexCenter">
                       <button onClick={()=>fireAlert(card.id)} style={{backgroundColor:'#d33'}}>Delete </button>

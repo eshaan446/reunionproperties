@@ -44,7 +44,7 @@ const Residencies = () => {
             value={city}
             onChange={(e) => setcity(e.target.value)}
           >
-            <option value="">Select Location</option>
+           
 
             <option value="Mumbai">Mumbai</option>
 
@@ -76,7 +76,6 @@ const Residencies = () => {
             value={bhk}
             onChange={(e) => setbhk(parseInt(e.target.value))}
           >
-            <option value="">Select Property Type</option>
             <option value="0">All</option>
             <option value="1">1BHK</option>
             <option value="2">2BHK</option>
