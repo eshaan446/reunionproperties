@@ -17,7 +17,7 @@ const ViewProperty = () => {
     let jsondata = await data.json();
     setapidata(jsondata);
   };
-  console.log(apidata);
+  let email=localStorage.getItem('userEmail');
   return (
     <div>
       <Header />
@@ -25,7 +25,7 @@ const ViewProperty = () => {
         {apidata === null ? (
           "Loading...."
         ) : (
-          <ViewPropertyListing apidata={apidata} />
+          <ViewPropertyListing apidata={apidata} email={email} />
         )}
       </div>
     </div>

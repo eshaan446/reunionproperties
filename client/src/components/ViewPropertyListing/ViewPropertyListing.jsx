@@ -1,10 +1,18 @@
 import React from "react";
 import "../Residencies/Residencies.css";
 import { HashLoader } from "react-spinners";
-const ViewPropertyListing = ({ apidata }) => {
+import Swal from 'sweetalert2'
+const ViewPropertyListing = ({ apidata,email }) => {
   const handleEmailClick = (emailAddress) => {
-    const mailtoLink = `mailto:${emailAddress}`;
-    window.location.href = mailtoLink;
+    if(email===null){
+      Swal.fire({
+        title: "Please Login!",
+        text: "Login to Contact the Property Owner!",
+        icon: "error"
+      });
+    }
+    else {const mailtoLink = `mailto:${emailAddress}`;
+    window.location.href = mailtoLink;}
   };
   return (
     <div className="flexCenter innerWidth">
@@ -42,7 +50,7 @@ const ViewPropertyListing = ({ apidata }) => {
             {apidata.userEmail.split("@").reverse().slice(-1).join("")}
             <button
               onClick={() => handleEmailClick(apidata.userEmail)}
-              style={{ marginTop: "10px", alignItems: "center" }}
+              style={{ marginTop: "10px", alignItems: "center"}}
             >
               ✉️ Contact Owner
             </button>

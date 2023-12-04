@@ -1,0 +1,7 @@
+.hero-wrapper{
+  /*background:var(--blue-gradient);*/
+  background:#007bff;
+  height: 75vh;
+  width: 98.9.5vw;
+  color: whitesmoke;
+}
