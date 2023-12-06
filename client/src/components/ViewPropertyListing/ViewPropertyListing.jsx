@@ -48,7 +48,7 @@ const ViewPropertyListing = ({ apidata,email }) => {
           <span className="secondaryText">
             <span style={{ color: "orange" }}>Posted By:</span>{" "}
             {apidata.userEmail.split("@").reverse().slice(-1).join("")}
-            <button
+            <button className="button"
               onClick={() => handleEmailClick(apidata.userEmail)}
               style={{ marginTop: "10px", alignItems: "center"}}
             >

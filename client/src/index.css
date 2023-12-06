@@ -92,6 +92,17 @@ a {
 .button:hover{
   transform: scale(1.1);
 }
+.xbutton{
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+  color: white;
+  border-radius: 4px;
+  transition: all 300ms ease-in;
+  background:'#d33';
+}
+.xbutton:hover{
+  transform: scale(1.1);
+}
 
 /* media queries */
 @media (min-width: 1536px) {

@@ -32,7 +32,7 @@ const Login = () => {
       console.log(localStorage.getItem("authToken"));
       Swal.fire({
         title: "Login Successfull!",
-        text: "Welcome to Reunion",
+        text: "Welcome to FindYourStay",
         icon: "success"
       });
 
@@ -58,7 +58,7 @@ const Login = () => {
           />
           <small id="emailHelp" className="form-text text-muted">Welcome Back !!.</small>
         </div>
-        <button type="submit" className="btn btn-primary">Login</button>
+        <button type="submit" className="button">Login</button>
       </form>
     </div>
     </>

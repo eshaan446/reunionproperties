@@ -57,7 +57,7 @@ const Signup = () => {
             We'll never share your email with anyone else.
           </small>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="button">
           Signup
         </button>
       </form>

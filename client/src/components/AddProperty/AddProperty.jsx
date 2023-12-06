@@ -113,7 +113,7 @@ const AddProperty = () => {
           </span>
           <input type="number" placeholder="e.g: 300" value={carpetArea} onChange={(e)=>setCarpetArea(parseInt(e.target.value))} required/>
 
-          <button type="submit">Add property</button>
+          <button className="button" type="submit">Add property</button>
         </form>
       </div>
     </div>

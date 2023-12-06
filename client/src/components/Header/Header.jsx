@@ -29,8 +29,8 @@ const Header = () => {
     <section className="h-wrapper">
       <div className=" flexCenter paddings innerWidth h-container">
         <Link to="/">
-          <img src="/reunion.jpg" alt="Reunion" width={55} height={50}/>
-          {/* <h2>Reunion</h2> */}
+          {/* <img src="/snip.png" alt="Reunion" width={65} height={65}/> */}
+          <h1>FindYourStay</h1>
         </Link>
         <div className=" flexCenter h-menu">
         <Link to={'/'}><h3>Home</h3></Link>

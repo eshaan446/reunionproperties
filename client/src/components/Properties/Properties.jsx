@@ -101,7 +101,7 @@ const Properties = () => {
               value={search}
               onChange={(e) => setsearch(e.target.value)}
             />
-            <Link to='/addProperty'><button className="flexCenter innerWidth">Add a property</button></Link>
+            <Link to='/addProperty'><button className=" button flexCenter innerWidth">Add a property</button></Link>
           </form>
           </div>
           <br />
@@ -146,8 +146,8 @@ const Properties = () => {
                       <img style={{height:'13px', width:'14px'}} src="/tape-measure-thin.svg"/> {card.facilities.carpetArea}sq/ft
                       </span>
                       <div id="flexCenter">
-                      <button onClick={()=>fireAlert(card.id)} style={{backgroundColor:'#d33'}}>Delete </button>
-                      <button onClick={()=>navigate(`../properties/update/${card.id}`)} style={{marginLeft:'15px'}}>Update</button>
+                      <button className="xbutton" onClick={()=>fireAlert(card.id)} style={{backgroundColor:'#d33'}}>Delete </button>
+                      <button className="button" onClick={()=>navigate(`../properties/update/${card.id}`)} style={{marginLeft:'15px'}}>Update</button>
                       </div>
                     </div>
                   </SwiperSlide>

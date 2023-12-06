@@ -130,7 +130,7 @@ const UpdatePropertyForm = ({apidata}) => {
           </span>
           <input type="number" placeholder="e.g-300" value={carpetArea} onChange={(e)=>setCarpetArea(parseInt(e.target.value))} required/>
 
-          <button type="submit">Update this property</button>
+          <button className='button' type="submit">Update this property</button>
         </form>
       </div>
     </>

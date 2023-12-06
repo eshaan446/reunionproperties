@@ -74,9 +74,9 @@ const HomepageListing = ({ apidata, search, city, price, bhk }) => {
                       <img style={{height:'13px', width:'14px'}} src="/bed-bedroom-alt.svg"/> {card.facilities.bhk} BHK
                       </span>
                       <span className="secondaryText">
-                      <img style={{height:'13px', width:'14px'}} src="/tape-measure-thin.svg"/> {card.facilities.carpetArea}sq/ft
+                      <img style={{height:'14px', width:'14px', objectFit:'contain'}} src="/tape-measure-thin.svg"/> {card.facilities.carpetArea}sq/ft
                       </span>
-                      <button onClick={() => navigate(`../${card.id}`)}>
+                      <button className='button' onClick={() => navigate(`../${card.id}`)}>
                         View Property
                       </button>
                     </div>

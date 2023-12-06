@@ -83,7 +83,7 @@ const Residencies = () => {
             <option value="4">4BHK</option>
           </select>
 
-          <button type="submit">Apply</button>
+          <button className="button" type="submit">Apply</button>
         </form>
       </div>
 
