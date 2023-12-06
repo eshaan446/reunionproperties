@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import Swal from 'sweetalert2'
+import Lottie from 'lottie-react'
+import newanimation from './animation.json'
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({ email: "" });
@@ -40,9 +42,10 @@ const Signup = () => {
     <>
   <Header/>
     <div className="flexCenter innerWidth">
+    <Lottie style={{ marginTop:'1rem', height:'18rem'}} className="innerWidth" animationData={newanimation}/>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label htmlFor="exampleInputEmail1">Email address:</label>
           <input
             type="email"
             className="form-control"
