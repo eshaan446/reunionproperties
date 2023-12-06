@@ -21,7 +21,7 @@ const Residencies = () => {
 
   return (
     <>
-      <div className="flexCenter innerWidth">
+      <div style={{marginTop:'30px'}} className="flexCenter innerWidth">
         <form
           onSubmit={(e) => {
             e.preventDefault();

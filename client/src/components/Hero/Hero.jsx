@@ -9,14 +9,14 @@ const Hero = () => {
       <div className="hero-section innerWidth">
         <div className="left flexCenter">
           <h1>
-          Escape, Explore, Enjoy: Find Your Ideal Rental Retreat Today!
+          Unlock Your Ideal Stay with FindYourStay - Find Your Ideal Rental with Us!
             <br />
-            From Cozy Retreats to Lavish Estates - Find Your Ideal Rental with Us!
+            Your ultimate destination for hassle-free property rentals.
           </h1>
           
           
-        </div>
-        <Lottie style={{ marginTop:'1rem', height:'25rem'}} className="innerWidth" animationData={newanimation}/>
+        </div><br/>
+        <Lottie style={{ marginTop:'1rem', height:'320px'}} className="innerWidth" animationData={newanimation}/>
       </div>
       
     </section>
