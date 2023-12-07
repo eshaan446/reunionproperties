@@ -9,8 +9,6 @@ const GetStarted = () => {
           <span className="primaryText">Get started with FindYourStay</span>
           <span className="secondaryText">
           Unlock the potential of your property by adding your property to FindYourStay!
-            <br />
-            Find your residence soon
           </span>
           <Link to='/addProperty'><button className="button">
             Add a Property
