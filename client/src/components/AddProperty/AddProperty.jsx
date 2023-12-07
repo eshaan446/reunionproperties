@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../Header/Header";
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const AddProperty = () => {
   const navigate=useNavigate()
@@ -65,7 +66,7 @@ const AddProperty = () => {
   return (
     <div>
       <Header />
-      <h2 className="innerWidth">Add a property:</h2>
+      <h2 className=" heading innerWidth">Add a property:</h2>
       <div className="flexCenter innerWidth">
         <form onSubmit={handleSubmit}>
           <span>
@@ -116,6 +117,7 @@ const AddProperty = () => {
           <button className="button" type="submit">Add property</button>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };

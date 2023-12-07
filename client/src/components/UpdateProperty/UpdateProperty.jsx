@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import UpdatePropertyForm from "./UpdatePropertyForm";
 import { HashLoader } from "react-spinners";
+import Footer from "../Footer/Footer";
 
 const UpdateProperty = () => {
   const [apidata, setapidata] = useState([]);
@@ -23,7 +24,7 @@ const UpdateProperty = () => {
   return (
     <>
       <Header />
-      <h2 className="innerWidth">Update a property:</h2>
+      <h2 className=" heading innerWidth">Update a property:</h2>
       <div className="flexCenter">
       {apidata.length === 0 ? (
         <HashLoader loading={true} color="black" />
@@ -31,6 +32,7 @@ const UpdateProperty = () => {
         <UpdatePropertyForm apidata={apidata} />
       )}
       </div>
+      <Footer/>
     </>
   );
 };

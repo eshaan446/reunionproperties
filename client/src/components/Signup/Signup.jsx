@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import Swal from 'sweetalert2'
 import Lottie from 'lottie-react'
 import newanimation from './animation.json'
-
+import Footer from "../Footer/Footer";
 const Signup = () => {
   const [credentials, setCredentials] = useState({ email: "" });
   const navigate = useNavigate();
@@ -65,6 +65,7 @@ const Signup = () => {
         </button>
       </form>
     </div>
+    <Footer/>
     </>
   );
 };

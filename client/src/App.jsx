@@ -6,6 +6,7 @@ import Login from "./components/Login/Login";
 import AddProperty from "./components/AddProperty/AddProperty";
 import ViewProperty from "./components/ViewProperty/ViewProperty";
 import UpdateProperty from "./components/UpdateProperty/UpdateProperty";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     <Route path='/login' element={<Login/>}/>
     <Route path='/signup' element={<Signup/>}/>
     <Route path='/addProperty' element={<AddProperty/>}/>
+    <Route path='/contact' element={<Contact/>} />
     </Routes>
     </BrowserRouter>
   );

@@ -14,3 +14,9 @@ color: var(--secondary);
 .h-menu:hover{
     cursor: pointer;
 }
+.heading{
+    color:#4066ff;
+}
+.headingx{
+    color:#eeeeff;
+}

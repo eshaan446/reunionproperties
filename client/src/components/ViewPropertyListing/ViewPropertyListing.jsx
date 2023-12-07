@@ -2,6 +2,7 @@ import React from "react";
 import "../Residencies/Residencies.css";
 import { HashLoader } from "react-spinners";
 import Swal from 'sweetalert2'
+
 const ViewPropertyListing = ({ apidata,email }) => {
   const handleEmailClick = (emailAddress) => {
     if(email===null){
@@ -15,6 +16,7 @@ const ViewPropertyListing = ({ apidata,email }) => {
     window.location.href = mailtoLink;}
   };
   return (
+    <>
     <div className="flexCenter innerWidth">
       {apidata.length !== 0 ? (
         <div className="flexColStart r-card">
@@ -59,7 +61,9 @@ const ViewPropertyListing = ({ apidata,email }) => {
       ) : (
         <HashLoader loading={true} color="black" />
       )}
+     
     </div>
+    </>
   );
 };
 

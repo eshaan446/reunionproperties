@@ -30,7 +30,7 @@ const Header = () => {
       <div className=" flexCenter paddings innerWidth h-container">
         <Link to="/">
           {/* <img src="/snip.png" alt="Reunion" width={65} height={65}/> */}
-          <h1>FindYourStay</h1>
+          <h1 className="heading">Find<span className="headingx">Your</span>Stay</h1>
         </Link>
         <div className=" flexCenter h-menu">
         <Link to={'/'}><h3>Home</h3></Link>

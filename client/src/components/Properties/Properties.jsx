@@ -8,6 +8,7 @@ import "./Properties.css";
 import { HashLoader, SyncLoader } from "react-spinners";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
+import Footer from "../Footer/Footer";
 
 
 const Properties = () => {
@@ -156,6 +157,7 @@ const Properties = () => {
           </Swiper>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

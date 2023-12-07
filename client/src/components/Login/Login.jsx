@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Swal from 'sweetalert2'
 import Lottie from 'lottie-react'
 import newanimation from './animation.json'
+import Footer from '../Footer/Footer';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -64,6 +65,7 @@ const Login = () => {
         <button type="submit" className="button">Login</button>
       </form>
     </div>
+    <Footer/>
     </>
   );
 };

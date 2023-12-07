@@ -21,7 +21,7 @@ const Residencies = () => {
 
   return (
     <>
-      <div style={{marginTop:'30px'}} className="flexCenter innerWidth">
+      <div style={{ marginTop: "30px" }} className="flexCenter innerWidth">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -44,8 +44,6 @@ const Residencies = () => {
             value={city}
             onChange={(e) => setcity(e.target.value)}
           >
-           
-
             <option value="Mumbai">Mumbai</option>
 
             <option value="Delhi">Delhi</option>
@@ -53,10 +51,6 @@ const Residencies = () => {
             <option value="Bangalore">Bangalore</option>
           </select>
 
-          <span>
-            <small>Select Date:</small>
-          </span>
-          <input type="date" />
           <span>
             <small>Maximum Price: ₹{price}</small>
           </span>
@@ -83,7 +77,9 @@ const Residencies = () => {
             <option value="4">4BHK</option>
           </select>
 
-          <button className="button" type="submit">Apply</button>
+          <button className="button" type="submit">
+            Apply
+          </button>
         </form>
       </div>
 
