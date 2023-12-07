@@ -5,6 +5,7 @@ import { BsFillChatDotsFill } from "react-icons/bs";
 import {HiChatBubbleBottomCenter} from 'react-icons/hi2'
 import { FaGithub } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 const Contact = () => {
@@ -55,28 +56,17 @@ const Contact = () => {
               <div className="flexColCenter mode">
                 <div className="flexStart">
                   <div className="flexCenter icon">
-                    <BsFillChatDotsFill size={25} />
+                    <FaLinkedin size={25} />
                   </div>
                   <div className="flexColStart detail">
-                    <span className="primaryText">Video Call</span>
-                    <span className="secondaryText">021 123 145 14</span>
+                    <span className="primaryText">LinkedIn</span>
+                    <span className="secondaryText">Visit Eshaan's LinkedIn</span>
                   </div>
                 </div>
-                <div className="flexCenter button">Video Call now</div>
+                <a href="https://www.linkedin.com/in/eshaanpandey" target="_blank"><div className="flexCenter button">View Once</div></a>
               </div>
 
-              <div className="flexColCenter mode">
-                <div className="flexStart">
-                  <div className="flexCenter icon">
-                    <HiChatBubbleBottomCenter size={25} />
-                  </div>
-                  <div className="flexColStart detail">
-                    <span className="primaryText">Message</span>
-                    <span className="secondaryText">021 123 145 14</span>
-                  </div>
-                </div>
-                <div className="flexCenter button">Message now</div>
-              </div>
+              
             </div>
           </div>
         </div>

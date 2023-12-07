@@ -10,9 +10,11 @@ const GetStarted = () => {
           <span className="secondaryText">
           Unlock the potential of your property by adding your property to FindYourStay!
           </span>
-          <Link to='/addProperty'><button className="button">
+          {!localStorage.getItem('userEmail')?<Link to='/login'><button className="button">
+            Get Started
+          </button></Link>:<Link to='/addProperty'><button className="button">
             Add a Property
-          </button></Link>
+          </button></Link>}
         </div>
       </div>
     </div>

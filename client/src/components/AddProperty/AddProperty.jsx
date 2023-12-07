@@ -66,7 +66,7 @@ const AddProperty = () => {
   return (
     <div>
       <Header />
-      <h2 className=" heading innerWidth">Add a property:</h2>
+      <h2 className=" heading innerWidth">Enter your property details:</h2>
       <div className="flexCenter innerWidth">
         <form onSubmit={handleSubmit}>
           <span>

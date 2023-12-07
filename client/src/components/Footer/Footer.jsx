@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flexColStart f-right">
           <span style={{color:'#2949c6'}}className="primaryText">FindYourStay💙</span>
           <span className="secondaryText">Connecting Properties, Empowering Rentals.</span>
-          <span className="secondaryText">Made with 💙in India </span>
+          <span className="secondaryText">Made with 💙 in India. </span>
           <div className="flexCenter f-menu">
             <span>Property</span>
             <span>Services</span>
