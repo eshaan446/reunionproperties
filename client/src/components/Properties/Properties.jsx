@@ -8,7 +8,8 @@ import "./Properties.css";
 import { HashLoader, SyncLoader } from "react-spinners";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
-import Footer from "../Footer/Footer";
+import Lottie from 'lottie-react'
+import newanimation from './newanimation.json'
 
 
 const Properties = () => {
@@ -87,6 +88,7 @@ const Properties = () => {
   
   
   return (
+    <>
     <div>
       <Header />
       <div id="residencies" className="r-wrapper">
@@ -111,7 +113,7 @@ const Properties = () => {
             {/* slider */}
             {apidata.length===0 ? (
               <div className="flexCenter innerWidth">
-                {showloader ?<HashLoader loading={showloader} color="black" />:<h2>You currently have no Listings 😔</h2>}
+                {showloader ?<HashLoader loading={showloader} color="blue" />:(<><h2 className="heading">Get started by adding your first property.</h2><Lottie style={{ marginTop:'1rem', height:'20rem'}} className="innerWidth" animationData={newanimation}/></>)}
               </div>
             ) : (
               apidata
@@ -157,8 +159,10 @@ const Properties = () => {
           </Swiper>
         </div>
       </div>
-      <Footer/>
+      
     </div>
+    
+    </>
   );
 };
 

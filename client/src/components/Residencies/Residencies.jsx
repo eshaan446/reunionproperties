@@ -28,7 +28,7 @@ const Residencies = () => {
           }}
         >
           <span>
-            <small>Search any residency:</small>
+            <small className="heading">Search any residency:</small>
           </span>
           <input
             type="text"
@@ -37,7 +37,7 @@ const Residencies = () => {
             onChange={(e) => setsearch(e.target.value)}
           />
           <span>
-            <small>Select City:</small>
+            <small className="heading">Select City:</small>
           </span>
           <select
             name="city"
@@ -52,7 +52,7 @@ const Residencies = () => {
           </select>
 
           <span>
-            <small>Maximum Price: ₹{price}</small>
+            <small className="heading">Maximum Budget: <span style={{color:'orange'}}><b>₹ {price}</b></span></small>
           </span>
           <input
             type="range"
@@ -63,7 +63,7 @@ const Residencies = () => {
             onChange={(e) => setprice(parseInt(e.target.value))}
           />
           <span>
-            <small>Select BHK:</small>
+            <small className="heading">Select BHK:</small>
           </span>
           <select
             name="propertyType"
@@ -85,7 +85,7 @@ const Residencies = () => {
 
       {apidata.length === 0 ? (
         <div className="flexCenter innerWidth">
-          <HashLoader loading={true} color="black" />
+          <HashLoader loading={true} color="blue" />
         </div>
       ) : (
         <HomepageListing

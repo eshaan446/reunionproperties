@@ -106,6 +106,7 @@ a {
 .heading{
   color:#4066ff;
 }
+
 /* media queries */
 @media (min-width: 1536px) {
   .innerWidth {

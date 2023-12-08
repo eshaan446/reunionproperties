@@ -12,9 +12,7 @@ const GetStarted = () => {
           </span>
           {!localStorage.getItem('userEmail')?<Link to='/login'><button className="button">
             Get Started
-          </button></Link>:<Link to='/addProperty'><button className="button">
-            Add a Property
-          </button></Link>}
+          </button></Link>:''}
         </div>
       </div>
     </div>

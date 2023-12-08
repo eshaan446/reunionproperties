@@ -86,25 +86,25 @@ const UpdatePropertyForm = ({apidata}) => {
          <div className="flexCenter innerWidth">
         <form onSubmit={handleSubmit} >
           <span>
-            <small>Add a residency:</small>
+            <small className="heading">Add a residency:</small>
           </span>
           <input type="text" placeholder="e.g- Crown Apartments" value={title} onChange={(e)=>setTitle(e.target.value)} required/>
           <span>
-            <small>Provide a description of your property:</small>
+            <small className="heading">Provide a description of your property:</small>
           </span>
           <textarea style={{padding:'10px'}} value={description} onChange={(e)=>setDescription(e.target.value)} required></textarea>
 
           <span>
-            <small>Rent/month ₹:</small>
+            <small className="heading">Rent/month ₹:</small>
           </span>
           <input type="number" value={price} onChange={(e)=>setPrice(parseInt(e.target.value))} required/>
           <span>
           <span>
-            <small>Enter the address or Landmark area:</small>
+            <small className="heading">Enter the address or Landmark area:</small>
           </span>
           <input type="text" placeholder="e.g- Andheri West" value={address} onChange={(e)=>setAddress(e.target.value)} required/>
           <span></span>
-            <small>Select city:</small>
+            <small className="heading">Select city:</small>
           </span>
           <select value={city} onChange={(e)=>setCity(e.target.value)}>
             <option value="Mumbai">Mumbai</option>
@@ -112,12 +112,12 @@ const UpdatePropertyForm = ({apidata}) => {
             <option value="Bangalore">Bangalore</option>
           </select>
           <span>
-            <small>Paste a link of an image of your residency:</small>
+            <small className="heading">Paste a link of an image of your residency:</small>
           </span>
           <input type="text" value={image} placeholder="e.g- https://dummyimage.com/" onChange={(e)=>setImage(e.target.value)} required/>
           {image !=='' && <small><i>*Please make sure that the image link is working*.</i></small>}
           <span>
-            <small>Select BHK:</small>
+            <small className="heading">Select BHK:</small>
           </span>
           <select value={bhk} onChange={(e)=>setBhk(parseInt(e.target.value))}>
             <option value="1">1BHK</option>
@@ -126,7 +126,7 @@ const UpdatePropertyForm = ({apidata}) => {
             <option value="4">4BHK</option>
           </select>
           <span>
-            <small>Carpet Area in sq/ft:</small>
+            <small className="heading">Carpet Area in sq/ft:</small>
           </span>
           <input type="number" placeholder="e.g-300" value={carpetArea} onChange={(e)=>setCarpetArea(parseInt(e.target.value))} required/>
 

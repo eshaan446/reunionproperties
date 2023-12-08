@@ -5,6 +5,8 @@ import { useState } from "react";
 import UpdatePropertyForm from "./UpdatePropertyForm";
 import { HashLoader } from "react-spinners";
 import Footer from "../Footer/Footer";
+import Lottie from 'lottie-react'
+import newanimation from './animation.json'
 
 const UpdateProperty = () => {
   const [apidata, setapidata] = useState([]);
@@ -24,10 +26,11 @@ const UpdateProperty = () => {
   return (
     <>
       <Header />
-      <h2 className=" heading innerWidth">Update a property:</h2>
+      <h2 className=" heading innerWidth">Update your property:</h2>
+      <Lottie style={{ marginTop:'1rem', height:'12rem'}} className="innerWidth" animationData={newanimation}/>
       <div className="flexCenter">
       {apidata.length === 0 ? (
-        <HashLoader loading={true} color="black" />
+        <HashLoader loading={true} color="blue" />
       ) : (
         <UpdatePropertyForm apidata={apidata} />
       )}

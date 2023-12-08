@@ -59,7 +59,7 @@ const ViewPropertyListing = ({ apidata,email }) => {
           </span>
         </div>
       ) : (
-        <HashLoader loading={true} color="black" />
+        <HashLoader loading={true} color="blue" />
       )}
      
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import './Hero.css'
 import Lottie from 'lottie-react'
-import newanimation from './newanimation.json'
+import newanimation from './animation.json'
 
 const Hero = () => {
   return (
