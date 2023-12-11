@@ -12,7 +12,7 @@ export class Chatbot extends Component {
     }
   render() {
     return (
-      <div>Chatbot</div>
+      
     )
   }
 }
