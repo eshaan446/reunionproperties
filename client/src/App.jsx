@@ -7,9 +7,13 @@ import AddProperty from "./components/AddProperty/AddProperty";
 import ViewProperty from "./components/ViewProperty/ViewProperty";
 import UpdateProperty from "./components/UpdateProperty/UpdateProperty";
 import Contact from "./components/Contact/Contact";
+import Chatbot from "./components/Chatbot";
+
+
 
 function App() {
   return (
+    <>
     
     <BrowserRouter>
     <Routes>
@@ -23,6 +27,8 @@ function App() {
     <Route path='/contact' element={<Contact/>} />
     </Routes>
     </BrowserRouter>
+    <Chatbot/>
+    </>
   );
 }
 
