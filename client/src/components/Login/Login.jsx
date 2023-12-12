@@ -59,6 +59,7 @@ const Login = () => {
             placeholder="Enter email"
             name='email'
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <small id="emailHelp" className="form-text text-muted">Welcome Back !!.</small>
         </div>
