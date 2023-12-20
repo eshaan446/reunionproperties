@@ -1,5 +1,5 @@
 
-**Built in MERN**
+**Tech Stack:- MERN**
 # API Usage Documentation for Backend
 
 ## 1. Fetch ALL Properties API
